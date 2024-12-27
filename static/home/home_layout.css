@@ -1,0 +1,120 @@
+.site {
+    display: flex;
+    flex-direction: column;
+    max-width: 75em;
+    margin: 0 auto;
+    /* padding: 2em; */
+    background: lightgray;
+    min-height: 100vh;
+}
+
+.clear::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.site-header,
+.site-footer {
+    display: flex;
+    background: purple;
+    /* border-radius: 0.3em; */
+    overflow: hidden;
+    color: #FFF;
+}
+
+.site-title {
+    font-size: 3em;
+    padding: 0 0.5em;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: lime;
+}
+
+.site-content {
+    padding: 2em;
+    flex-grow: 1;
+}
+
+.site-content .intro {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 2em;
+}
+
+@media (max-width: 900px) {
+
+    .site-content .intro {
+        display: block;
+    }
+    
+    .site-content .intro-content {
+        padding-top: 2em;
+    }
+
+}
+
+.site-content .intro .intro-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5em;
+    flex: 0 0 50%;
+    order: 15;
+}
+
+.site-content .intro .intro-media::before,
+.site-content .intro .intro-media::after {
+    display: block;
+    content: '';
+}
+
+.site-content .intro .intro-media::before {
+    padding-top: 56.25%;
+}
+
+
+.site-content .intro .intro-media::after {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in;
+}
+
+.site-content .intro .intro-media:hover::after {
+    opacity: 0;
+}
+
+.site-content .intro .intro-media img{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.site-content .intro-content {
+    flex: 0 0 50%;
+    order: 10;
+    padding-right: 2em;
+}
+
+.site-content .intro-content h1 {
+    text-align: center;
+    line-height: 1;
+}
+
+.site-footer {
+    padding: 1em;
+}
+
+.site-footer p{
+    padding: 0;
+    color: lime;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}

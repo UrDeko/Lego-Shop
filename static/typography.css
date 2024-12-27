@@ -1,0 +1,39 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font: 16px/1.5 'Georgia', 'serif';
+    box-sizing: border-box;
+}
+
+@media (min-width: 900px) and (max-width: 1250px) {
+
+    html {
+        font-size: 14px;
+    }
+
+}
+
+body, form, textarea, select, table {
+    font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    padding-bottom: 0.5em;
+    font-weight: normal;
+}
+
+h1 {font-size: 2.4em;}
+h2 {font-size: 2.0em;}
+h3 {font-size: 1.6em;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.2em;}
+h6 {font-size: 1em;}
+
+p, ul, ol {
+    padding-bottom: 1.5em;
+}

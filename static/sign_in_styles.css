@@ -1,0 +1,129 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font: 16px/1.5 "Verdana" "serif";
+    box-sizing: border-box;
+}
+
+form {
+    max-width: 20em;
+    margin: 3em auto;
+}
+
+form fieldset {
+    padding: 4em 2em 0;
+}
+
+form legend {
+    font-size: 3em;
+    margin: 0 auto;
+}
+
+.field {
+    display: flex;
+    padding-bottom: 2.5em;
+    position: relative;
+}
+
+.field input {
+    padding: 0.5em;
+    flex-grow: 1;
+    order: 2;
+    border: 2px solid #999;
+    border-left: none;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    outline: none;
+}
+
+.field label {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5em;
+    border: 2px solid #999;
+    border-right: none;
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+}
+
+.field label::before {
+    display: block;
+    content: '\f007';
+    border-right: 1px solid #CCC;
+    padding-right: 0.5em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.field-email label::before {
+    content: '\f0e0';
+}
+
+.field-pass label::before {
+    content: '\f023';
+}
+
+.field-mobile label::before {
+    content: '\f095';
+}
+
+.field label span {
+    position: absolute;
+    top: -1.2em; left: 0;
+}
+
+.field input:required ~label span::before {
+    display: inline-block;
+    content: '*';
+    color: #F00;
+    padding-right: 0.3em;
+}
+
+.field input:hover,
+.field input:focus,
+.field input:hover + label,
+.field input:focus + label {
+    border-color: #369;
+}
+
+.field-submit {
+    padding-bottom: 1em;
+}
+
+.field-submit .submit-info {
+    flex-grow: 1;
+    padding: 0.7em;
+    border: 2px solid transparent;
+    border-radius: 0.3em;
+    background: #369;
+    color: #FFF;
+    outline: none;
+}
+
+.field-login a:hover,
+.field-login a:focus,
+.field-submit .submit-info:hover,
+.field-submit .submit-info:focus {
+    background: #FFF;
+    color: #369;
+    border-color: #369;
+}
+
+.field-login a {
+    display: block;
+    text-align: center;
+    flex-grow: 1;
+    padding: 0.5em;
+    border: 2px solid transparent;
+    border-radius: 0.3em;
+    background: #369;
+    color: #FFF;
+    text-decoration: none;
+    outline: none;
+}

@@ -1,0 +1,242 @@
+.site {
+    display: flex;
+    flex-direction: column;
+    max-width: 75em;
+    margin: 0 auto;
+    /* padding: 2em; */
+    background: lightgray;
+    min-height: 100vh;
+}
+
+.clear::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.site-header,
+.site-footer {
+    display: flex;
+    background: purple;
+    /* border-radius: 0.3em; */
+    overflow: hidden;
+    color: #FFF;
+}
+
+.site-title {
+    font-size: 3em;
+    padding: 0 0.5em;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: lime;
+}
+
+.site-content {
+    flex-grow: 1;
+    padding: 2em;
+}
+
+.site-content .sets,
+.site-content .minifigures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.site-content .sets::after,
+.site-content .sets::before,
+.site-content .minifigures::after,
+.site-content .minifigures::before {
+    display: block;
+    content: '';
+    order: 1000;
+}
+
+ 
+.site-content .set,
+.site-content .minifig {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid purple;
+    border-radius: 0.3em;
+    overflow: hidden;
+    background: purple;
+    color: lime;
+}
+
+.site-content .set ul,
+.site-content .minifig ul {
+    padding: 0;
+}
+
+.site-content .set ul li,
+.site-content .minifig li {
+    list-style: none outside;
+}
+
+.site-content .set .set-media,
+.site-content .minifig .minifig-media {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-content .set .set-media::after,
+.site-content .set .set-media::before,
+.site-content .minifig .minifig-media::after,
+.site-content .minifig .minifig-media::before {
+    display: block;
+    content: '';
+} 
+
+.site-content .set,
+.site-content .sets::after,
+.site-content .sets::before,
+.site-content .minifig,
+.site-content .minifigures::after,
+.site-content .minifigures::before {
+    flex: 0 1 24%;
+    margin-bottom: 1.5%;
+}
+
+@media (max-width: 900px) {
+
+    .site-content .set,
+    .site-content .sets::after,
+    .site-content .sets::before,
+    .site-content .minifig,
+    .site-content .minifigures::after,
+    .site-content .minifigures::before {
+        flex: 0 1 48%;
+        margin-bottom: 5%;
+    }
+
+}
+
+ .site-content .set .set-media::before {
+    padding-top: 56.25%;
+}
+
+.site-content .minifig .minifig-media::before {
+    padding-top: 150%;
+}
+
+.site-content .set .set-media::after,
+.site-content .minifig .minifig-media::after {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in;
+}
+
+.site-content .set .set-media:hover::after,
+.site-content .minifig .minifig-media::after {
+    opacity: 0;
+}
+
+.site-content .set .set-media img {
+    width: 100%;
+    height: auto;
+}
+
+.site-content .minifig .minifig-media img {
+    width: auto;
+    height: 100%;
+}
+
+.site-content .set .set-media img,
+.site-content .minifig .minifig-media img {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.site-content .set .set-bio,
+.site-content .minifig .minifig-bio {
+    flex-grow: 1;
+}
+
+.site-content .set .set-bio header,
+.site-content .minifig .minifig-bio header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-content .set .set-bio header h2,
+.site-content .minifig .minifig-bio header h2 {
+    line-height: 1;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.site-content .set .set-bio ul li,
+.site-content .minifig .minifig-bio ul li {
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+.site-content .set .set-options,
+.site-content .minifig .minifig-options {
+    margin-top: 0.5em;
+}
+
+.site-content .set .set-options ul,
+.site-content .minifig .minifig-options ul {
+    display: flex;
+}
+
+.site-content .set .set-options ul li,
+.site-content .minifig .minifig-options ul li {
+    display: block;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.site-content .set .set-options ul li a,
+.site-content .minifig .minifig-options ul li a {
+    display: block;
+    text-decoration: none;
+    color: lime;
+    padding: 0.5em 1em;
+    outline: none;
+}
+
+.site-content .set .set-options ul li a:hover,
+.site-content .set .set-options ul li a:focus,
+.site-content .minifig .minifig-options ul li a:hover,
+.site-content .minifig .minifig-options ul li a:focus {
+    background: #FFF;
+}
+
+.site-content .set .set-options ul li a::before,
+.site-content .minifig .minifig-options ul li a::before {
+    display: inline-block;
+    content: '\f004';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 0.5em;
+}
+
+.site-content .set .set-options ul li:first-child a::before,
+.site-content .minifig .minifig-options ul li:first-child a::before {
+    content: '\f07a';
+}
+
+.site-footer {
+    padding: 1em;
+}
+
+.site-footer p{
+    padding: 0;
+    color: lime;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}

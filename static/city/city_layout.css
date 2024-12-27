@@ -1,0 +1,197 @@
+.site {
+    display: flex;
+    flex-direction: column;
+    max-width: 75em;
+    margin: 0 auto;
+    /* padding: 2em; */
+    background: lightgray;
+    min-height: 100vh;
+}
+
+.clear::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.site-header,
+.site-footer {
+    display: flex;
+    background: purple;
+    /* border-radius: 0.3em; */
+    overflow: hidden;
+    color: #FFF;
+}
+
+.site-title {
+    font-size: 3em;
+    padding: 0 0.5em;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: lime;
+}
+
+.site-content {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: flex-start; */
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.site-content::after,
+.site-content::before {
+    display: block;
+    content: '';
+    order: 1000;
+}
+
+.site-content .set,
+.site-content::after,
+.site-content::before {
+    flex: 0 1 24%;
+}
+
+.site-content .set {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid purple;
+    border-radius: 0.3em;
+    overflow: hidden;
+    margin-bottom: 1.5%;
+    background: purple;
+    color: lime;
+}
+
+@media (max-width: 900px) {
+
+    .site-content .set,
+    .site-content::after,
+    .site-content::before {
+        flex: 0 1 48%;
+        margin-bottom: 4%;
+    }
+
+}
+
+.site-content .set ul {
+    padding: 0;
+}
+
+.site-content .set ul li {
+    list-style: none outside;
+}
+
+.site-content .set .set-media {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-content .set .set-media::after,
+.site-content .set .set-media::before {
+    display: block;
+    content: '';
+}
+
+.site-content .set .set-media::before {
+    padding-top: 56.25%;
+}
+
+.site-content .set .set-media::after {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in;
+}
+
+.site-content .set .set-media:hover::after {
+    opacity: 0;
+}
+
+.site-content .set .set-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.site-content .set .set-bio {
+    flex-grow: 1;
+}
+
+.site-content .set .set-bio header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-content .set .set-bio header h2{
+    line-height: 1;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1.5em 0 1em;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.site-content .set .set-bio ul li {
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+.site-content .set .set-options {
+    margin-top: 0.5em;
+}
+
+.site-content .set .set-options ul {
+    display: flex;
+}
+
+.site-content .set .set-options ul li {
+    display: block;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.site-content .set .set-options ul li a {
+    display: block;
+    text-decoration: none;
+    color: lime;
+    padding: 0.5em 1em;
+    outline: none;
+}
+
+.site-content .set .set-options ul li a:hover,
+.site-content .set .set-options ul li a:focus {
+    background: #FFF;
+}
+
+.site-content .set .set-options ul li a::before {
+    display: inline-block;
+    content: '\f004';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 0.5em;
+}
+
+.site-content .set .set-options ul li:first-child a::before {
+    content: '\f07a';
+}
+
+.site-footer {
+    padding: 1em;
+}
+
+.site-footer p{
+    padding: 0;
+    color: lime;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}

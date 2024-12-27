@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font: 16px/1.5 "Verdana" "sans-serif";
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 2rem;
+}
+
+form {
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+form fieldset {
+    padding: 2rem;
+    outline: none;
+}
+
+form legend {
+    font-size: 3em;
+    margin: 0 auto;
+
+    /* display: inline-block;
+    padding: 0 0.5rem;
+    margin-left: -0.5rem;
+    font-size: 1.5rem; */
+}
+
+form p {
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+form label {
+    display: flex;
+    font-weight: bold;
+    padding: 0 1rem;
+    min-width: auto;
+    text-align: right;
+    background: grey;
+    align-items: center;
+    color: white;
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    outline: none;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+
+form input[type = "text"],
+form input[type = "password"] {
+    border: 2px solid grey;
+    padding: 0.5rem;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 0.5rem;
+    background: cornflowerblue;
+    color: white;
+    border: 2px solid cornflowerblue;
+    cursor: pointer;
+    border-radius: 0.3em;
+}
+
+form input[type = "text"]:hover,
+form input[type = "text"]:focus,
+form input[type = "password"]:hover, 
+form input[type = "password"]:focus {
+    border-color: cornflowerblue;
+}
+
+form input[type="submit"]:hover,
+form input[type="submit"]:focus {
+    background: white;
+    color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+form .field-box {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+form .field-box label { order: 1; }
+form .field-box input { order: 2; }
+
+form .field-box label span {
+    display: none;
+}
+
+form .field-box label::before {
+    display: block;
+    content: '\f023';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+}
+
+form .field-box:nth-child(2) label::before {
+    content: '\f007';
+}
+
+form .field-box input:hover + label, 
+form .field-box input:focus + label {
+    background: cornflowerblue;
+}

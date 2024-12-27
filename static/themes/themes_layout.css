@@ -1,0 +1,146 @@
+.site {
+    display: flex;
+    flex-direction: column;
+    max-width: 75em;
+    margin: 0 auto;
+    /* padding: 2em; */
+    background: lightgray;
+    min-height: 100vh;
+}
+
+.clear::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.site-header,
+.site-footer {
+    display: flex;
+    background: purple;
+    /* border-radius: 0.3em; */
+    overflow: hidden;
+    color: #FFF;
+}
+
+.site-title {
+    font-size: 3em;
+    padding: 0 0.5em;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: lime;
+}
+
+.site-content {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.site-content::after,
+.site-content::before {
+    display: block;
+    content: '';
+    order: 1000;
+}
+
+.site-content .theme,
+.site-content::after,
+.site-content::before {
+    flex: 0 0 24%;
+}
+
+.site-content .theme {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid purple;
+    border-radius: 0.3em;
+    overflow: hidden;
+    margin-bottom: 1.5%;
+    background: purple;
+}
+
+@media (max-width: 900px) {
+
+    .site-content .theme,
+    .site-content::after,
+    .site-content::before {
+        flex: 0 0 48%;
+        margin-bottom: 4%;
+    }
+
+}
+
+.site-content .theme .theme-media {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-content .theme .theme-media::after,
+.site-content .theme .theme-media::before {
+    display: block;
+    content: '';
+}
+
+.site-content .theme .theme-media::before {
+    padding-top: 150%;
+}
+
+.site-content .theme .theme-media::after {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in;
+}
+
+.site-content .theme .theme-media:hover::after {
+    opacity: 0;
+}
+
+.site-content .theme .theme-media img {
+    display: block;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.site-content .theme .theme-title {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background: purple;
+    padding-top: 1em;
+}
+
+.site-content .theme .theme-title h2{
+    line-height: 1;
+    font-size: 1.5em;
+    text-align: center;
+    color: lime;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.site-content .theme .theme-title h3 {
+    padding: 0;
+}
+
+.site-footer {
+    padding: 1em;
+}
+
+.site-footer p{
+    padding: 0;
+    color: lime;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}

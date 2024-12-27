@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    list-style: none outside;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: lime;
+    padding: 0 1em;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    outline: none;
+}
+
+nav ul li a:focus,
+nav ul li a:hover {
+    background: #FFF;
+}
